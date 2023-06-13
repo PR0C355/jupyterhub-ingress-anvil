@@ -1,0 +1,27 @@
+# Default values for jupyterhub-ingress-anvil.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+jupyterhub:
+  scheduling:
+    userScheduler:
+      enabled: false
+  singleuser:
+    cloudMetadata:
+      blockWithIptables: false
+  hub:
+    config:
+      Authenticator:
+        admin_users:
+          - user1
+          - user2
+        allowed_users:
+          - user3
+          - user4
+      DummyAuthenticator:
+        password: a-shared-secret-password
+      JupyterHub:
+        authenticator_class: dummy
+
+ingress:
+  enabled: false
