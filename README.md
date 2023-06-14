@@ -1,6 +1,6 @@
 # JupyterHub with Ingress - Helm Chart
 
-This Helm chart deploys a JupyterHub instance with an Ingress resource. JupyterHub is a multi-user Jupyter Notebook server that allows multiple users to access and run Jupyter Notebooks on a shared cluster. This chart was designed for the [Anvil Cluster](https://doi.org/10.1145/3491418.3530766) but should be applicable to any Kubernetes deployment.
+This Helm chart deploys a JupyterHub instance with an Ingress resource. JupyterHub is a multi-user Jupyter Notebook server that allows multiple users to access and run Jupyter Notebooks on a shared cluster. This chart was designed for the [Anvil Cluster](https://doi.org/10.1145/3491418.3530766) but should be applicable to any Kubernetes deployment with a deplooyed ingress-nginx controller.
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ Before deploying this Helm chart, ensure that you have the following prerequisit
    ```shell
    helm upgrade --cleanup-on-fail \
      --install jupyterhub ./jupyterhub-ingress-anvil \
-     --namespace oo-test \
+     --namespace jhub \
      --create-namespace
    ```
 
