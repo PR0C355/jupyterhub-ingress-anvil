@@ -15,11 +15,10 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    {{- range .Values.ingress.rules }}
+    {{- with .Values.ingress }}
     - host: {{ .host | quote }}
       http:
         paths:
-          {{- range .httpPaths }}
           - path: {{ .path }}
             pathType: {{ .pathType }}
             backend:
@@ -27,6 +26,5 @@ spec:
                 name: {{ .serviceName }}
                 port:
                   number: {{ .servicePortNumber }}
-          {{- end }}
     {{- end }}
 {{- end }}
