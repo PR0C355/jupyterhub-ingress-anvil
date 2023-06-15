@@ -24,4 +24,9 @@ jupyterhub:
         authenticator_class: dummy
 
 ingress:
-  enabled: false
+  enabled: true
+  host: "jupyterhub.anvilcloud.rcac.purdue.edu"
+  path: /
+  pathType: Prefix
+  serviceName: proxy-public
+  servicePortNumber: 80
