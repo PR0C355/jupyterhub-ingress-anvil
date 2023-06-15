@@ -59,6 +59,7 @@ To upgrade the JupyterHub deployment with a new version of the Helm chart, use t
 ```shell
 helm upgrade --cleanup-on-fail \
    jupyterhub ./jupyterhub-ingress-anvil
+   --namespace jhub
 ```
 
 Ensure to modify the `values.yaml` file if you want to make any configuration changes during the upgrade.
